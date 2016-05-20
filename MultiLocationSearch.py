@@ -3,6 +3,7 @@
 import xml.etree.ElementTree as et
 import csv
 import subprocess
+import os
 
 fileName = "TO-BE-CHANGED.search-ms"
 with open(fileName) as f:
@@ -13,4 +14,7 @@ with open(fileName) as f:
 		with open(searchFile, "w+") as wf:
 			wf.write(data.replace("TO-BE-CHANGED", i))
 			subprocess.call("explorer.exe " + searchFile)
-			
+	deleteQuest = input("Would you like to delete the new saved searches? (WILL ALSO CLOSE THEM IF OPEN) y | n: ")
+	if deleteQuest.lower().startswith("y"):
+		for i in searchTerms.split(","):
+			os.remove(i + ".search-ms")
