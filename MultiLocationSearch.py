@@ -16,7 +16,8 @@ def restartExplorer():
 	subprocess.Popen("C:\\windows\\explorer.exe")
 
 def main():
-	fileName = "TO-BE-CHANGED.search-ms"
+	magicWord = "TO-BE-CHANGED"
+	fileName = magicWord + ".search-ms"
 	with open(fileName) as f:
 		data = f.read()
 		searchTerms = input("Enter the terms (comma separated) to search for: ")
@@ -28,7 +29,7 @@ def main():
 		for i in searchTerms.split(","):
 			searchFile = i + ".search-ms"
 			with open(searchFile, "w+") as wf:
-				wf.write(data.replace("TO-BE-CHANGED", i))
+				wf.write(data.replace(magicWord, i))
 				subprocess.call("explorer.exe " + searchFile)
 
 		deleteQuest = input("Would you like to delete the new saved searches? (WILL ALSO CLOSE THEM IF OPEN) y | n: ")
