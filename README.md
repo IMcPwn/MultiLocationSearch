@@ -2,6 +2,8 @@
 Search in multiple locations for multiple files using the "power" of Windows explorer.
 
 # Installation
+NOTE: To my knowledge this program only works in Windows 7. Windows 10 does not have the same Search again in options required in the Usage section below.
+
 1. Download [Python 3.5.1](https://www.python.org/downloads/) and add it to your PATH.
 2. Download MultiLocationSearch and follow the Usage instructions below.
 
